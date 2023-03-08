@@ -1,0 +1,32 @@
+.bloom-chat-wrapper .chat-actions
+{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+
+.bloom-chat-wrapper .chat-actions button
+{
+	all: unset !important;
+}
+
+.bloom-chat-wrapper .chat-actions .chat-box
+{
+	background-color: #444444;
+	border-radius: 15px !important;
+	transition: height 0.25s ease-in-out;
+	height: 50px;
+	padding: 15px 10px;
+}
+
+.bloom-chat-wrapper .chat-actions .chat-box:hover
+{
+	height: 150px;
+}
+
+.bloom-chat-wrapper .chat-actions .chat-box textarea
+{
+	all: unset !important;
+	width: 100% !important;
+	height: 100% !important;
+}
