@@ -1,10 +1,15 @@
 import { ItemView, WorkspaceLeaf, Platform } from 'obsidian';
 
+import { createRoot, Root } from "react-dom/client";
+import * as React from "react";
+
+
 import { BLOOM_COPILOT_VIEW_TYPE } from '../constants';
 import BloomCopilot from '../main'
 
 export class BloomCopilotView extends ItemView {
 	private readonly plugin: BloomCopilot;
+	private root: Root;
 
 	constructor(leaf: WorkspaceLeaf, plugin: BloomCopilot) {
 		super(leaf);
@@ -48,5 +53,11 @@ export class BloomCopilotView extends ItemView {
 	}
 
 	private appendBloomCopilot(viewContent: HTMLElement) {
+		this.root = createRoot(viewContent);
+ 		this.root.render(
+ 			<>
+				<h1>Hello world!</h1>
+ 			</>
+ 		);
 	}
 }

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"jsx": "react",
 		"baseUrl": "src",
 		"inlineSourceMap": true,
 		"inlineSources": true,
@@ -15,10 +16,13 @@
 			"DOM",
 			"ES5",
 			"ES6",
-			"ES7"
+			"ES7",
+			"ES2020",
+			"scripthost"
 		]
 	},
 	"include": [
-		"**/*.ts"
-	]
+		"**/*.ts",
+		"**/*.tsx"
+, "src/components/BloomCopilotView.tsx"	]
 }
