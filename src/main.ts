@@ -46,38 +46,38 @@ export default class BloomCopilot extends Plugin {
 	private async initListeners() {
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
 		// Using this function will automatically remove the event listener when this plugin is disabled.
-		this.registerDomEvent(document, 'selectionchange', (evt: MouseEvent) => {
-			let view = this.app.workspace.getActiveViewOfType(MarkdownView);
+		// this.registerDomEvent(document, 'selectionchange', (evt: MouseEvent) => {
+		// 	let view = this.app.workspace.getActiveViewOfType(MarkdownView);
 
-			if (!view) {
-				// View can be null some times. Can't do anything in this case.
-			} else {
-				let view_mode = view.getMode(); // "preview" or "source" (can also be "live" but I don't know when that happens)
+		// 	if (!view) {
+		// 		// View can be null some times. Can't do anything in this case.
+		// 	} else {
+		// 		let view_mode = view.getMode(); // "preview" or "source" (can also be "live" but I don't know when that happens)
 				
-				switch (view_mode) {
-					case "preview":
-						// The leaf is in preview mode, which makes things difficult.
-						// I don't know how to get the selection when the editor is in preview mode :(
-						break;
-					case "source":
-						// Ensure that view.editor exists!
-						if ("editor" in view) {
-							// Good, it exists.
-							// @ts-ignore We already know that view.editor exists.
-							let selection = view.editor.getSelection(); // THIS IS THE SELECTED TEXT, use it as you wish.
+		// 		switch (view_mode) {
+		// 			case "preview":
+		// 				// The leaf is in preview mode, which makes things difficult.
+		// 				// I don't know how to get the selection when the editor is in preview mode :(
+		// 				break;
+		// 			case "source":
+		// 				// Ensure that view.editor exists!
+		// 				if ("editor" in view) {
+		// 					// Good, it exists.
+		// 					// @ts-ignore We already know that view.editor exists.
+		// 					let selection = view.editor.getSelection(); // THIS IS THE SELECTED TEXT, use it as you wish.
 
-							if (selection.length) {
-								console.log(`Selected text: ${selection}`);
-							}
-						}
-						// If we get here, then 'view' does not have a property named 'editor'.
-						break;
-					default:
-						// If we get here, then we did not recognise 'view_mode'.
-						break;
-				}
-			}
-		});
+		// 					if (selection.length) {
+		// 						console.log(`Selected text: ${selection}`);
+		// 					}
+		// 				}
+		// 				// If we get here, then 'view' does not have a property named 'editor'.
+		// 				break;
+		// 			default:
+		// 				// If we get here, then we did not recognise 'view_mode'.
+		// 				break;
+		// 		}
+		// 	}
+		// });
 	}
 
 	openBloomCopilot = async () => {

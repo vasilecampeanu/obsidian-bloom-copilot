@@ -55,8 +55,8 @@ export class BloomCopilotView extends ItemView {
 
 	private appendBloomCopilot(viewContent: HTMLElement) {
 		this.root = createRoot(viewContent);
- 		this.root.render (
-			<BloomChat></BloomChat>
+		this.root.render (
+			<BloomChat plugin={this.plugin}></BloomChat>
  		);
 	}
 }
